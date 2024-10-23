@@ -35,7 +35,11 @@ _Puedes ver el frontend en:_
 
 [My Search](https://github.com/Kalevins/my-search)
 
-_Puedes ver los resultados de los test en el archivo:_
+_Resultados de las pruebas:_
+
+![Test Results](Test.png)
+
+_O en el archivo:_
 
 ```
 Test Results.html
