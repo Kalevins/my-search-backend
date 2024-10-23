@@ -24,7 +24,7 @@ public class ClientController {
     public ResponseEntity<List<Client>> showAll () {
         List<Client> clients = clientService.findAll();
         if (clients.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(clients, HttpStatus.OK);
         }
@@ -36,21 +36,21 @@ public class ClientController {
             ClientDto client = clientService.findById(id);
             return new ResponseEntity<>(client, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    @GetMapping("/client")
+    /* POSTS */
+
+    @PostMapping("/client/identification")
     public ResponseEntity<ClientDto> showByIdentification (@RequestBody IdentificationDto identificationDto) {
         try {
             ClientDto client = clientService.findByIdentification(identificationDto);
             return new ResponseEntity<>(client, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
-    /* POSTS */
 
     @PostMapping("/client")
     @ResponseStatus(HttpStatus.CREATED)
