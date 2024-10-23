@@ -39,10 +39,10 @@ _Resultados de las pruebas:_
 
 ![Test Results](Test.png)
 
-_O en el archivo:_
+_El JAR del proyecto se encuentra en la carpeta raiz:_
 
 ```
-Test Results.html
+my-search-backend.jar
 ```
 
 ## 🛠️ Construcción
